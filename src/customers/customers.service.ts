@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class CustomersService {
-  saveCustomer(): string {
+  async saveCustomer(): Promise<string> {
     return 'Save Customer Invoked';
   }
 }

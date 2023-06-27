@@ -6,7 +6,7 @@ export class CustomersController {
   constructor(private readonly customersService: CustomersService) {}
 
   @Get()
-  findAll(): string {
+  async findAll(): Promise<string> {
     return this.customersService.saveCustomer();
   }
 }
