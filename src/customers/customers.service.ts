@@ -9,6 +9,11 @@ export class CustomersService {
     @InjectModel('Customer') private readonly customerModel: Model<Customer>,
   ) {}
 
+  async saveCustomer(customer: Customer): Promise<Customer> {
+    const newCustomer = new this.customerModel(customer);
+    return await newCustomer.save();
+  }
+
   async getAllCustomer(): Promise<Customer[]> {
     return await this.customerModel.find();
   }
