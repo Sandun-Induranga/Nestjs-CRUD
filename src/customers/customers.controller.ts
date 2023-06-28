@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { CustomersService } from './customers.service';
 import { Customer } from './interfaces/customer.interface';
 import { CreateCustomerDto } from './dto/create-customer.dto';
@@ -17,5 +17,13 @@ export class CustomersController {
   @Get()
   async findAll(): Promise<Customer[]> {
     return this.customersService.getAllCustomer();
+  }
+
+  @Put(':id')
+  async update(
+    @Body() createCustomerDto: CreateCustomerDto,
+    @Param('id') id,
+  ): Promise<Customer> {
+    return this.customersService.updateCustomer(id, createCustomerDto);
   }
 }
