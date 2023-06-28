@@ -3,6 +3,12 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Customer } from './interfaces/customer.interface';
 
+/**
+ * @author :  Sandun Induranga
+ * @description : Customer Service
+ * @since : 2021/02/06
+ */
+
 @Injectable()
 export class CustomersService {
   constructor(

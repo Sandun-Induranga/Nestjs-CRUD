@@ -11,6 +11,12 @@ import { CustomersService } from './customers.service';
 import { Customer } from './interfaces/customer.interface';
 import { CreateCustomerDto } from './dto/create-customer.dto';
 
+/**
+ * @author :  Sandun Induranga
+ * @description : Customer Controller
+ * @since : 2021/02/06
+ */
+
 @Controller('customers')
 export class CustomersController {
   constructor(private readonly customersService: CustomersService) {}
