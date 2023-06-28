@@ -17,4 +17,10 @@ export class CustomersService {
   async getAllCustomer(): Promise<Customer[]> {
     return await this.customerModel.find();
   }
+
+  async updateCustomer(id: string, customer: Customer): Promise<Customer> {
+    return await this.customerModel.findByIdAndUpdate(id, customer, {
+      new: true,
+    });
+  }
 }
