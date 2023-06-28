@@ -23,4 +23,8 @@ export class CustomersService {
       new: true,
     });
   }
+
+  async deleteCustomer(id: string): Promise<Customer> {
+    return await this.customerModel.findByIdAndRemove(id);
+  }
 }
